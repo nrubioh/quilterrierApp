@@ -7,7 +7,7 @@ App para encontrar y adoptar mascotas :D
 
 ![cuatro](imagenes/3.png)
 
-### Inspiracion Card
+### Inspiración Card
 ![cuatro](imagenes/44.png)
 
 ## TODO
@@ -15,7 +15,16 @@ App para encontrar y adoptar mascotas :D
 1. FireBase
 2. Maps 
 3. RecyclerView + Card + Border Radius
-4. Navbar
+4. Navbar???
 5. Animations??
 6. Activity o Fragment?
+7. ModelViewViewModel????
 
+## MainActivity
+1. TextView.
+2. Button
+3. RecyclerView
+   1. CardView
+   2. ImageView
+   3. TextView
+4. Menu
