@@ -1,12 +1,67 @@
 package com.example.quilterrier.recyler;
 
 import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public abstract class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.ViewHolder> {
+import com.example.quilterrier.R;
 
+
+
+public  class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.MyViewHolder> {
+     String name[], type[], location[];
+    int images[];
+    Context context;
+
+    public AdapterRecylcer(Context ctx, String nombre[], String tipo[],String ubicacion[],
+                           int img[]){
+        context = ctx;
+        name = nombre;
+        type = tipo;
+        location = ubicacion;
+        images = img;
+
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView nombre, tipo, ubicacion;
+        ImageView imageView_animal;
+
+        public MyViewHolder(@NonNull  View itemView) {
+            super(itemView);
+            imageView_animal = itemView.findViewById(R.id.imageView_animal);
+            nombre = itemView.findViewById(R.id.textView_nombre);
+            tipo = itemView.findViewById(R.id.textView_tipo);
+            ubicacion = itemView.findViewById(R.id.textView_ubicacion);
+        }
+    }
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.row_item, parent, false);
+        return new MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.nombre.setText(name[position]);
+        holder.tipo.setText(type[position]);
+        holder.ubicacion.setText(location[position]);
+        holder.imageView_animal.setImageResource(images[position]);
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 5;
+    }
 
 }

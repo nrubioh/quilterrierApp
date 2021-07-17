@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">QuilTerrier</string>
+
+    <string-array name="nombre_perro">
+        <item>Jhon</item>
+        <item>Geralt</item>
+        <item>Goku</item>
+        <item>Ruben</item>
+        <item>Mara</item>
+    </string-array>
+
+    <string-array name="tipo">
+        <item>Perdido</item>
+        <item>Adopcion</item>
+        <item>Perdido</item>
+        <item>Perdido</item>
+        <item>Adopción</item>
+    </string-array>
+
+    <string-array name="ubicacion">
+        <item>Caldera</item>
+        <item>Los Nogales</item>
+        <item>Independencia</item>
+        <item>Maipu</item>
+        <item>Valparaíso</item>
+    </string-array>
+
 </resources>

@@ -7,6 +7,10 @@ public class Perros {
     private String ubicacion;
     private Boolean tieneChip;
 
+    public Perros(String nombre){
+        this.nombre = nombre;
+    }
+
 
     public Perros(String nombre, String tipo, String ubicacion, Boolean tieneChip) {
         this.nombre = nombre;
