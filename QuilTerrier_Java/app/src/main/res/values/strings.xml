@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">QuilTerrier</string>
+
+    <string name="nombre">quilTerrier app</string>
+    <string name="login">LOGIN</string>
+    <string name="creracuenta">CREAR CUENTA</string>
+    <string name="loginactivityusuario">Ingrese su E-mail</string>
+    <string name="loginactivityusuarioedittext">Usuario</string>
+    <string name="loginactivitypassword">Ingrese su contraseña</string>
+    <string name="loginactivitypasswordedittext">contraseña</string>
+    <string name="loginactivitybtniniciarsesion">INICIAR SESION</string>
+    <string name="crearcuentaactivitycorreo">E-mail</string>
+    <string name="crearcuentaactivitycorreoedittext">Ingrese su E-mail</string>
+    <string name="crearcuentaactivitypassword2">Repita su contraseña</string>
+    <string name="crearcuentaactivitybtnregistarse">REGISTRARSE</string>
+    <string name="btnregresar">REGRESAR</string>
+    <string name="perritos">quilTerrier app</string>
+    <string name="perritomensaje">WOW!! SO MUCH login</string>
+    <string name="cerrarsesion">CERRAR SESION</string>
+
+
 </resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "764072168470",
+    "project_id": "quilterrier-app",
+    "storage_bucket": "quilterrier-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764072168470:android:839861c239c675f52ef937",
+        "android_client_info": {
+          "package_name": "com.example.quilterrier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764072168470-gc79jrdog90vofgmmsmg9pdj82gicbng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRRhTJCkghSC0dhfcHfLaPUm97LDufnOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764072168470-gc79jrdog90vofgmmsmg9pdj82gicbng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.appdeevaluacionmodulo03;
+package com.example.quilterrier;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class CrearCuentaActivity extends AppCompatActivity {
+public class ActivityCrearCuenta extends AppCompatActivity {
 
     private FirebaseAuth nAuth;
     private EditText correo, contrasena, confimacontrasena;
@@ -67,7 +67,7 @@ public class CrearCuentaActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Usuario creado con éxito", Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = nAuth.getCurrentUser();
                                 //si se regista correctamente, al dar click al boton que sea enviado a la main activity para que ahora escoja la opcion de loguearse con la cuenta recientemente creada
-                                Intent i = new Intent(getApplicationContext(), Loginctivity.class);
+                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(i);
 
                                 //updateUI(user); //comentado por la misma razon que el otro updateUI
@@ -86,4 +86,3 @@ public class CrearCuentaActivity extends AppCompatActivity {
         }
     }
 }
-

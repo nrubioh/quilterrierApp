@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Loginctivity">
+    tools:context=".ActivityCrearCuenta">
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="347dp"
-        android:layout_height="173dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="448dp"
+        android:layout_width="363dp"
+        android:layout_height="276dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="284dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -50,6 +51,24 @@
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/password2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/crearcuentaactivitypassword2"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/passwordedit2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/loginactivitypasswordedittext"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:textSize="20sp" />
+
     </LinearLayout>
 
     <Button
@@ -57,8 +76,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="iniciarSesion"
-        android:text="@string/loginactivitybtniniciarsesion"
+        android:onClick="registrarUsuario"
+        android:text="@string/crearcuentaactivitybtnregistarse"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,26 +85,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <Button
-        android:id="@+id/regresar"
-        android:layout_width="176dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="24dp"
-        android:onClick="volver"
-        android:text="@string/btnregresar"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iniciar" />
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:text="@string/login"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/creracuenta"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

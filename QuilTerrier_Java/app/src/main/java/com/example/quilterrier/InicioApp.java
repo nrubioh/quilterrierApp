@@ -1,4 +1,4 @@
-package com.example.appdeevaluacionmodulo03;
+package com.example.quilterrier;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,17 +8,14 @@ import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class perritos extends AppCompatActivity {
+public class InicioApp extends AppCompatActivity {
 
     FirebaseAuth nAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perritos);
-
-        nAuth = FirebaseAuth.getInstance();
-
+        setContentView(R.layout.activity_inicio_app);
     }
 
     public void cerrarSesion (View view) {
@@ -29,5 +26,3 @@ public class perritos extends AppCompatActivity {
 
     }
 }
-
-
