@@ -32,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void restablecerPassword (View v) {
+
+        Intent i = new Intent(this, resetPassword.class);
+        startActivity(i);
+
+    }
+
     public void crearCuenta (View v) {
 
         Intent i = new Intent(this, ActivityCrearCuenta.class);

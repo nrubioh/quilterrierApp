@@ -10,8 +10,10 @@
         android:id="@+id/cerrarsesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="104dp"
         android:onClick="cerrarSesion"
         android:text="@string/cerrarsesion"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="167dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

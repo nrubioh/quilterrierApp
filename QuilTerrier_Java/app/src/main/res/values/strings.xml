@@ -14,9 +14,10 @@
     <string name="crearcuentaactivitypassword2">Repita su contraseña</string>
     <string name="crearcuentaactivitybtnregistarse">REGISTRARSE</string>
     <string name="btnregresar">REGRESAR</string>
-    <string name="perritos">quilTerrier app</string>
-    <string name="perritomensaje">WOW!! SO MUCH login</string>
     <string name="cerrarsesion">CERRAR SESION</string>
-
+    <string name="restablecercontraseña">Restablecer contraseña</string>
+    <string name="mensajecontraseña">¿Olvidaste tu contraseña?</string>
+    <string name="restablecerpassword">Restablecer contraseña</string>
+    <string name="btnrestablecerpassword">Restablecer</string>
 
 </resources>

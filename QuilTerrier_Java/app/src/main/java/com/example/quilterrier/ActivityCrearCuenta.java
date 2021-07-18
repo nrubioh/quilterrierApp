@@ -75,7 +75,7 @@ public class ActivityCrearCuenta extends AppCompatActivity {
                                 //Si el registro falla, pasa lo siguiente  (arroja esta parte del método y mensajes)
 
                                 Toast.makeText(getApplicationContext(), "Fallo de autentificación", Toast.LENGTH_SHORT).show();
-                                //updateUI(null); //omentado por la misma razon que los otros dos updateUI
+                                //updateUI(null); //comentado por la misma razon que los otros dos updateUI
                             }
 
                         }

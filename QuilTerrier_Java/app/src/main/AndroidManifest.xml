@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuilTerrier">
-        <activity android:name=".InicioApp"></activity>
+        <activity android:name=".resetPassword"></activity>
+        <activity android:name=".InicioApp" />
         <activity android:name=".ActivityCrearCuenta" />
         <activity android:name=".MainActivity">
             <intent-filter>
