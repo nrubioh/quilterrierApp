@@ -16,25 +16,26 @@ import com.example.quilterrier.R;
 
 
 public  class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.MyViewHolder> {
-     String name[], type[], location[];
+     String name[], type[], location[], especieAnimal[];
     int images[];
     Context context;
 
 
 
-    public AdapterRecylcer(Context ctx, String nombre[], String tipo[],String ubicacion[],
+    public AdapterRecylcer(Context ctx, String nombre[], String tipo[],String ubicacion[], String especieArr[],
                            int img[]){
         context = ctx;
         name = nombre;
         type = tipo;
         location = ubicacion;
         images = img;
+        especieAnimal = especieArr;
 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         TextView nombre, tipo, ubicacion;
-        ImageView imageView_animal;
+        ImageView imageView_animal,especie;
 
         public MyViewHolder(@NonNull  View itemView) {
             super(itemView);
@@ -42,6 +43,7 @@ public  class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.MyVie
             nombre = itemView.findViewById(R.id.textView_nombre);
             tipo = itemView.findViewById(R.id.textView_tipo);
             ubicacion = itemView.findViewById(R.id.textView_ubicacion);
+            especie = itemView.findViewById(R.id.especie);
         }
     }
     @NonNull
@@ -57,6 +59,8 @@ public  class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.MyVie
         holder.nombre.setText(name[position]);
         holder.tipo.setText(type[position]);
         cambiarColorcitoDeNico(holder, position);
+        cambiarImagencitaDeNico(holder, position);
+
         //holder.tipo.setBackgroundColor(context.getResources().getColor(R.color.amarillo_patito));
         holder.ubicacion.setText(location[position]);
         holder.imageView_animal.setImageResource(images[position]);
@@ -73,6 +77,14 @@ public  class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.MyVie
            holder.tipo.setBackgroundColor(context.getResources().getColor(R.color.amarillo_patito));
         }else{
             holder.tipo.setBackgroundColor(context.getResources().getColor(R.color.rosado_profesor));
+        }
+    }
+
+    public void cambiarImagencitaDeNico(MyViewHolder holder, int position){
+        if (especieAnimal[position].equals("Gato")){
+            holder.especie.setImageResource(R.drawable.yarnball);
+        }else{
+            holder.especie.setImageResource(R.drawable.pata);
         }
     }
 

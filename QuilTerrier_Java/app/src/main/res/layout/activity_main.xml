@@ -23,6 +23,10 @@
         android:layout_height="wrap_content"
         android:onClick="iraRecycler"
         android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="178dp"
         tools:layout_editor_absoluteY="544dp" />
 

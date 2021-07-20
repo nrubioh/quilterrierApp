@@ -14,7 +14,7 @@ import com.example.quilterrier.R;
 public class RecylcerNacho extends AppCompatActivity {
     RecyclerView recyclerView;
 
-    String nombre[], tipo[], ubicacion[];
+    String nombre[], tipo[], ubicacion[] , especie[];
     int images[] ={R.drawable.uno, R.drawable.dos, R.drawable.tres,
             R.drawable.cuatro, R.drawable.cinco};
 
@@ -28,9 +28,9 @@ public class RecylcerNacho extends AppCompatActivity {
         nombre = getResources().getStringArray(R.array.nombre_perro);
         tipo = getResources().getStringArray(R.array.tipo);
         ubicacion = getResources().getStringArray(R.array.ubicacion);
-
+        especie = getResources().getStringArray(R.array.especie);
         AdapterRecylcer adapterRecylcer = new AdapterRecylcer(RecylcerNacho.this,
-                nombre, tipo, ubicacion, images);
+                nombre, tipo, ubicacion, especie, images);
         recyclerView.setAdapter(adapterRecylcer);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
