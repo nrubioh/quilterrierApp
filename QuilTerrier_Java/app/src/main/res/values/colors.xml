@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="amarillo_patito"> #FFC000</color>
+    <color name="rosado_profesor"> #F8BBD0</color>
+    <color name="morado_mora"> #B3B1F0</color>
+
+<!--    amarillo-->
+<!--    #FFC000-->
+<!--    rosado-->
+<!--    #F8BBD0-->
+<!--    purple-->
+<!--    #B3B1F0-->
+
+
 </resources>

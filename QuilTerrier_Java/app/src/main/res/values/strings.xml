@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">QuilTerrier</string>
-
     <string name="nombre">quilTerrier app</string>
     <string name="login">LOGIN</string>
     <string name="creracuenta">REGISTRARSE</string>
@@ -19,5 +18,36 @@
     <string name="mensajecontraseña">¿Olvidaste tu contraseña?</string>
     <string name="restablecerpassword">Restablecer contraseña</string>
     <string name="btnrestablecerpassword">Restablecer</string>
+
+    <string-array name="nombre_perro">
+        <item>Jhon</item>
+        <item>Geralt</item>
+        <item>Goku</item>
+        <item>Ruben</item>
+        <item>Mara</item>
+    </string-array>
+
+    <string-array name="tipo">
+        <item>Perdido!</item>
+        <item>Adopcion</item>
+        <item>Perdido!</item>
+        <item>Perdido!</item>
+        <item>Adopción</item>
+    </string-array>
+
+    <string-array name="ubicacion">
+        <item>Caldera</item>
+        <item>Los Nogales</item>
+        <item>Independencia</item>
+        <item>Maipu</item>
+        <item>Valparaíso</item>
+    </string-array>
+    <string-array name="especie">
+        <item>Perro</item>
+        <item>Perro</item>
+        <item>Perro</item>
+        <item>Perro</item>
+        <item>Gato</item>
+    </string-array>
 
 </resources>
