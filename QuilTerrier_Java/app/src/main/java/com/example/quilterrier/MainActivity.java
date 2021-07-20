@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         //btn_recycler = findViewById(R.id.btnrecycler);
 
     }
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     public void iraRecycler(View view){
         Intent intent = new Intent(this, RecylcerNacho.class);
         startActivity(intent);
+
+
+
     }
 
 }
