@@ -20,6 +20,8 @@ public  class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.MyVie
     int images[];
     Context context;
 
+
+
     public AdapterRecylcer(Context ctx, String nombre[], String tipo[],String ubicacion[],
                            int img[]){
         context = ctx;
@@ -54,6 +56,8 @@ public  class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.MyVie
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.nombre.setText(name[position]);
         holder.tipo.setText(type[position]);
+        cambiarColorcitoDeNico(holder, position);
+        //holder.tipo.setBackgroundColor(context.getResources().getColor(R.color.amarillo_patito));
         holder.ubicacion.setText(location[position]);
         holder.imageView_animal.setImageResource(images[position]);
 
@@ -64,4 +68,15 @@ public  class AdapterRecylcer extends RecyclerView.Adapter<AdapterRecylcer.MyVie
         return 5;
     }
 
+    public void cambiarColorcitoDeNico(MyViewHolder holder, int position){
+        if (type[position].equals("Perdido!")){
+           holder.tipo.setBackgroundColor(context.getResources().getColor(R.color.amarillo_patito));
+        }else{
+            holder.tipo.setBackgroundColor(context.getResources().getColor(R.color.rosado_profesor));
+        }
+    }
+
 }
+
+
+

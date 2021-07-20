@@ -24,7 +24,9 @@
             android:layout_height="wrap_content"
             android:background="@color/amarillo_patito"
             android:gravity="center"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,16 +34,16 @@
 
             <TextView
                 android:id="@+id/textView_ubicacion"
-                android:layout_width="85dp"
+                android:layout_width="95dp"
                 android:layout_height="20dp"
-                android:layout_marginEnd="72dp"
+                android:layout_marginEnd="4dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_nombre"
-                app:layout_constraintVertical_bias="0.209" />
+                app:layout_constraintVertical_bias="0.193" />
 
             <ImageView
                 android:id="@+id/imageView_animal"
@@ -62,7 +64,7 @@
                 android:layout_width="85dp"
                 android:layout_height="28dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginEnd="72dp"
+                android:layout_marginEnd="16dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textSize="14sp"
@@ -81,7 +83,7 @@
                 app:layout_constraintHorizontal_bias="0.111"
                 app:layout_constraintStart_toStartOf="@+id/imageView_animal"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.857"
+                app:layout_constraintVertical_bias="0.901"
                 app:srcCompat="@drawable/pata" />
 
             <TextView
