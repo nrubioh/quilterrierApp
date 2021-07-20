@@ -3,15 +3,15 @@
 
     <string name="nombre">quilTerrier app</string>
     <string name="login">LOGIN</string>
-    <string name="creracuenta">CREAR CUENTA</string>
-    <string name="loginactivityusuario">Ingrese su E-mail</string>
-    <string name="loginactivityusuarioedittext">Usuario</string>
+    <string name="creracuenta">REGISTRARSE</string>
+    <string name="loginactivityusuario">E-MAIL</string>
+    <string name="loginactivityusuarioedittext">CORREO</string>
     <string name="loginactivitypassword">Ingrese su contraseña</string>
-    <string name="loginactivitypasswordedittext">contraseña</string>
+    <string name="loginactivitypasswordedittext">CONTRASEÑA</string>
     <string name="loginactivitybtniniciarsesion">INICIAR SESION</string>
     <string name="crearcuentaactivitycorreo">E-mail</string>
     <string name="crearcuentaactivitycorreoedittext">Ingrese su E-mail</string>
-    <string name="crearcuentaactivitypassword2">Repita su contraseña</string>
+    <string name="crearcuentaactivitypassword2">REPITA SU CONTRASEÑA</string>
     <string name="crearcuentaactivitybtnregistarse">REGISTRARSE</string>
     <string name="btnregresar">REGRESAR</string>
     <string name="cerrarsesion">CERRAR SESION</string>

@@ -30,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
 
         nAuth = FirebaseAuth.getInstance(); //se instancia el objeto
 
+
+        // try block to hide Action bar
+        try {
+            this.getSupportActionBar().hide();
+        }
+        // catch block to handle NullPointerException
+        catch (NullPointerException e) {
+        }
+
+
     }
 
     public void restablecerPassword (View v) {

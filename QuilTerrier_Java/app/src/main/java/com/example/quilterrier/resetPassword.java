@@ -30,6 +30,14 @@ public class resetPassword extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
+        // try block to hide Action bar
+        try {
+            this.getSupportActionBar().hide();
+        }
+        // catch block to handle NullPointerException
+        catch (NullPointerException e) {
+        }
+
         //Instancio las variables en el onCreate
         mAuth = FirebaseAuth.getInstance();
         eTcorreo = findViewById(R.id.edittextcorreo);

@@ -4,25 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="-8dp"
+    android:background="@drawable/fondo3"
     android:onClick="crearCuenta"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="347dp"
-        android:layout_height="173dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="448dp"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="308dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/correo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/loginactivityusuario"
-            android:textSize="20sp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.591"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/correoedit"
@@ -32,20 +28,13 @@
             android:hint="@string/loginactivityusuarioedittext"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:textColorHint="#000000"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/loginactivitypassword"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/passwordedit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
             android:ems="10"
             android:hint="@string/loginactivitypasswordedittext"
             android:importantForAutofill="no"
@@ -55,65 +44,51 @@
 
     <Button
         android:id="@+id/iniciar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        style="@style/estiloboton"
+        android:layout_width="238dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="64dp"
         android:onClick="iniciarSesion"
         android:text="@string/loginactivitybtniniciarsesion"
-        android:textColor="#000000"
-        android:textSize="20sp"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/regresar"
-        android:layout_width="232dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="24dp"
+        style="@style/estiloboton"
+        android:layout_width="244dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFEB3B"
         android:onClick="crearCuenta"
         android:text="@string/creracuenta"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iniciar" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:text="@string/login"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/button"
-        android:layout_width="157dp"
-        android:layout_height="65dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="196dp"
+        style="@style/estiloboton"
+        android:layout_width="260dp"
+        android:layout_height="39dp"
+        android:backgroundTint="#00FFEB3B"
         android:onClick="restablecerPassword"
-        android:text="@string/restablecercontraseña"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="193dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="44dp"
-        android:gravity="center"
+        android:shadowColor="#00713A3A"
         android:text="@string/mensajecontraseña"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/iniciar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regresar" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

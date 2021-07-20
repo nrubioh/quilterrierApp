@@ -4,67 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondocrearcuenta"
     tools:context=".ActivityCrearCuenta">
 
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="363dp"
-        android:layout_height="276dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="284dp"
+        android:layout_width="258dp"
+        android:layout_height="222dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="172dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/correo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/loginactivityusuario"
-            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/correoedit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/loginactivityusuarioedittext"
+            android:hint="@string/loginactivityusuario"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
-            android:textColorHint="#000000"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/loginactivitypassword"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/passwordedit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
             android:ems="10"
             android:hint="@string/loginactivitypasswordedittext"
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/password2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/crearcuentaactivitypassword2"
-            android:textSize="20sp" />
-
         <EditText
             android:id="@+id/passwordedit2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
             android:ems="10"
-            android:hint="@string/loginactivitypasswordedittext"
+            android:hint="@string/crearcuentaactivitypassword2"
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:textSize="20sp" />
@@ -73,27 +54,17 @@
 
     <Button
         android:id="@+id/iniciar"
+        style="@style/estiloboton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
         android:onClick="registrarUsuario"
         android:text="@string/crearcuentaactivitybtnregistarse"
         android:textColor="#000000"
         android:textSize="20sp"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/creracuenta"
-        android:textSize="34sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

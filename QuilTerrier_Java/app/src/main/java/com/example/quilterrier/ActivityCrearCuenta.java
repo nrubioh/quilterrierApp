@@ -30,6 +30,15 @@ public class ActivityCrearCuenta extends AppCompatActivity {
         correo = findViewById(R.id.correoedit);
         contrasena = findViewById(R.id.passwordedit);
         confimacontrasena = findViewById(R.id.passwordedit2);
+
+        // try block to hide Action bar
+        try {
+            this.getSupportActionBar().hide();
+        }
+        // catch block to handle NullPointerException
+        catch (NullPointerException e) {
+        }
+
     }
 
     public void volver(View v) {
