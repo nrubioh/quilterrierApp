@@ -6,9 +6,12 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
 
+import com.example.quilterrier.Login;
 import com.example.quilterrier.R;
 
 public class RecylcerNacho extends AppCompatActivity {
@@ -35,6 +38,11 @@ public class RecylcerNacho extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
+
+    }
+    public void startLogin (View v){
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
 
     }
 }
