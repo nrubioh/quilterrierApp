@@ -11,6 +11,9 @@
         android:theme="@style/Theme.QuilTerrier">
         <activity android:name=".recyler.RecylcerNacho"></activity>
         <activity android:name=".Login"></activity>
+        <activity android:name=".resetPassword"></activity>
+        <activity android:name=".InicioApp" />
+        <activity android:name=".ActivityCrearCuenta" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
