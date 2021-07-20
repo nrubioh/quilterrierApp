@@ -27,9 +27,9 @@
     <string-array name="especie">
         <item>Perro</item>
         <item>Perro</item>
+        <item>Perro</item>
+        <item>Perro</item>
         <item>Gato</item>
-        <item>Perro</item>
-        <item>Perro</item>
     </string-array>
 
 </resources>
