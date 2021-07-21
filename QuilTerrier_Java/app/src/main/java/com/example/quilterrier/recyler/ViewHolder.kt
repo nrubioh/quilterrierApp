@@ -1,14 +1,6 @@
-package com.example.quilterrier.recyler;
+package com.example.quilterrier.recyler
 
-import android.view.View;
+import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-public class ViewHolder extends RecyclerView.ViewHolder {
-
-
-    public ViewHolder(@NonNull  View itemView) {
-        super(itemView);
-    }
-}
+class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

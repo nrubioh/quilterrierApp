@@ -1,95 +1,94 @@
-package com.example.quilterrier;
+package com.example.quilterrier
 
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentActivity;
+import android.Manifest
+import androidx.fragment.app.FragmentActivity
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.GoogleMap
+import android.os.Bundle
+import androidx.core.content.ContextCompat
+import com.google.android.gms.maps.SupportMapFragment
+import com.example.quilterrier.R
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.CameraUpdate
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import android.location.LocationListener
+import android.location.LocationManager
+import androidx.core.app.ActivityCompat
+import android.content.pm.PackageManager
+import android.location.Location
+import com.example.quilterrier.databinding.ActivityMapsBinding
+import com.google.android.gms.maps.model.Marker
 
-import android.Manifest;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.quilterrier.databinding.ActivityMapsBinding;
 // TODO añadir algun boton de prueba
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
-    private GoogleMap mMap;
-    private ActivityMapsBinding binding;
-    private Marker marcador;
-    double lat = 0.0;
-    double lng = 0.0;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR);
-
-        binding = ActivityMapsBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+class MapsActivity : FragmentActivity(), OnMapReadyCallback {
+    private var mMap: GoogleMap? = null
+    private var binding: ActivityMapsBinding? = null
+    private var marcador: Marker? = null
+    var lat = 0.0
+    var lng = 0.0
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val permissionCheck =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_CALENDAR)
+        binding = ActivityMapsBinding.inflate(layoutInflater)
+        setContentView(binding!!.root)
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map) as SupportMapFragment?
+        mapFragment!!.getMapAsync(this)
     }
 
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        miUbicacion();
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        miUbicacion()
     }
 
-    private void agregarMarcador(double lat, double lng) {
-        LatLng coordenadas = new LatLng(lat, lng);
-        CameraUpdate miUbicacion = CameraUpdateFactory.newLatLngZoom(coordenadas, 16);
-        if (marcador != null) marcador.remove();
-        marcador = mMap.addMarker(new MarkerOptions().position(coordenadas).title("Mi posición actual").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
-        mMap.animateCamera(miUbicacion);
+    private fun agregarMarcador(lat: Double, lng: Double) {
+        val coordenadas = LatLng(lat, lng)
+        val miUbicacion = CameraUpdateFactory.newLatLngZoom(coordenadas, 16f)
+        if (marcador != null) marcador!!.remove()
+        marcador = mMap!!.addMarker(
+            MarkerOptions().position(coordenadas).title("Mi posición actual")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher))
+        )
+        mMap!!.animateCamera(miUbicacion)
     }
 
-    private void actualizarUbicacion(Location location) {
+    private fun actualizarUbicacion(location: Location?) {
         if (location != null) {
-            lat = location.getLatitude();
-            lng = location.getLongitude();
-            agregarMarcador(lat, lng);
+            lat = location.latitude
+            lng = location.longitude
+            agregarMarcador(lat, lng)
         }
     }
 
-    LocationListener locListener = new LocationListener() {
-
-        public void onLocationChanged(Location location) {
-            actualizarUbicacion(location);
+    var locListener: LocationListener = object : LocationListener {
+        override fun onLocationChanged(location: Location) {
+            actualizarUbicacion(location)
         }
 
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-        }
+        override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
+        override fun onProviderEnabled(provider: String) {}
+        override fun onProviderDisabled(provider: String) {}
+    }
 
-        public void onProviderEnabled(String provider) {
+    private fun miUbicacion() {
+        val locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            return
         }
-
-        public void onProviderDisabled(String provider) {
-        }
-    };
-
-    private void miUbicacion() {
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        actualizarUbicacion(location);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 0, locListener);
+        val location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
+        actualizarUbicacion(location)
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 15000, 0f, locListener)
     }
 }

@@ -1,36 +1,28 @@
-package com.example.quilterrier;
+package com.example.quilterrier
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
-import com.google.firebase.auth.FirebaseAuth;
-
-public class InicioApp extends AppCompatActivity {
-
-    FirebaseAuth nAuth;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio_app);
+class InicioApp : AppCompatActivity() {
+    var nAuth: FirebaseAuth? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_inicio_app)
     }
 
-    public void cerrarSesion (View view) {
-
-        nAuth.signOut();
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
+    fun cerrarSesion(view: View?) {
+        nAuth!!.signOut()
+        val i = Intent(this, MainActivity::class.java)
+        startActivity(i)
 
         // try block to hide Action bar
         try {
-            this.getSupportActionBar().hide();
+            this.supportActionBar!!.hide()
+        } // catch block to handle NullPointerException
+        catch (e: NullPointerException) {
         }
-        // catch block to handle NullPointerException
-        catch (NullPointerException e) {
-        }
-
     }
 }
