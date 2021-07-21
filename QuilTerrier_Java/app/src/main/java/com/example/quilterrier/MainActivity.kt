@@ -1,38 +1,27 @@
-package com.example.quilterrier;
+package com.example.quilterrier
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import com.example.quilterrier.recyler.RecylcerNacho;
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.example.quilterrier.recyler.RecylcerNacho
 
 // git pull origin branchName ==> Permite trabajar en otra rama
-
-public class MainActivity extends AppCompatActivity {
-    Button btn_recycler;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this, RecylcerNacho.class);
-        startActivity(intent);
+class MainActivity : AppCompatActivity() {
+    var btn_recycler: Button? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val intent = Intent(this, RecylcerNacho::class.java)
+        startActivity(intent)
 
 
         //btn_recycler = findViewById(R.id.btnrecycler);
-
     }
 
-    public void iraRecycler(View view){
-        Intent intent = new Intent(this, RecylcerNacho.class);
-        startActivity(intent);
-
-
-
+    fun iraRecycler(view: View?) {
+        val intent = Intent(this, RecylcerNacho::class.java)
+        startActivity(intent)
     }
-
 }
