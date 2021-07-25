@@ -63,11 +63,16 @@ class AdapterRecylcer(
                 val fragmentAnotherImage = AnotherImage()
                 val args = Bundle()
                 args.putString("nombre",name[position])
+                args.putString("ubicacion",location[position])
                 args.putInt("imagen", images[position])
                 fragmentAnotherImage.setArguments(args)
                 val numero = name[position]
                 Toast.makeText(context,"el nombre del perro es "+ numero,Toast.LENGTH_LONG).show()
-                activity.supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView,fragmentAnotherImage).addToBackStack(null).commit()
+                activity.supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragmentContainerView,fragmentAnotherImage)
+                    .addToBackStack(null)
+                    .commit()
             }
         }
 

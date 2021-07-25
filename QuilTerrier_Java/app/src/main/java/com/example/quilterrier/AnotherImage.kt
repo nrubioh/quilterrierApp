@@ -1,6 +1,7 @@
  package com.example.quilterrier
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,11 @@ class AnotherImage : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val inflater = TransitionInflater.from(requireContext())
+        exitTransition = inflater.inflateTransition(R.transition.fade)
+        enterTransition = inflater.inflateTransition(R.transition.slide_right)
+
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -44,24 +50,29 @@ class AnotherImage : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_another_image, container, false) as View
-        val strtext = requireArguments().getString("nombre")
-        val text = rootView.findViewById(R.id.nombreDetalles) as TextView
-        text.setText(strtext)
 
+        val nombre = requireArguments().getString("nombre")
+        val nombreLayout = rootView.findViewById(R.id.nombreDetalles) as TextView
+        nombreLayout.setText(nombre)
 
-            val imagenGrande = requireArguments().getInt("imagen")
+        val ubicacion = requireArguments().getString("ubicacion")
+        val ubicacionLayout = rootView.findViewById(R.id.ubicacionDetalles) as TextView
+        ubicacionLayout.setText(ubicacion)
+
+        val imagenGrande = requireArguments().getInt("imagen")
         val imagen = rootView.findViewById(R.id.fotoGrande) as ImageView
         imagen.setImageResource(imagenGrande)
+
         return  rootView
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val cerrar = view.findViewById(R.id.close) as ImageButton
 
         cerrar.setOnClickListener { view ->
             Log.d("btnSetup", "Selected")
             val activity=view.context as AppCompatActivity
-
             activity.supportFragmentManager.beginTransaction().remove(this).commit();
 
         }
